@@ -5,123 +5,147 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Argus Shield</title>
   <link rel="icon" type="image/png" href="src/icons/icon32.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .privacy {
-      padding: 140px 0 var(--space-4xl);
+    .privacy-page {
+      padding: 160px 0 100px;
+      min-height: 100vh;
+    }
+    
+    .privacy__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      transition: color 0.3s;
+    }
+    
+    .privacy__back:hover {
+      color: var(--cyan-glow);
+    }
+    
+    .privacy__back svg {
+      width: 18px;
+      height: 18px;
     }
     
     .privacy__header {
-      margin-bottom: var(--space-3xl);
-      padding-bottom: var(--space-xl);
-      border-bottom: 1px solid var(--slate-800);
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
     
     .privacy__title {
-      font-size: clamp(32px, 4vw, 48px);
-      color: var(--slate-100);
-      margin-bottom: var(--space-sm);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-bright);
+      margin-bottom: 12px;
     }
     
     .privacy__updated {
       font-size: 14px;
-      color: var(--slate-500);
+      color: var(--text-muted);
     }
     
     .privacy__content {
-      max-width: 720px;
+      max-width: 760px;
     }
     
     .privacy__section {
-      margin-bottom: var(--space-2xl);
+      margin-bottom: 40px;
     }
     
     .privacy__section h2 {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
-      color: var(--slate-100);
-      margin-bottom: var(--space-md);
+      color: var(--text-bright);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
     }
     
     .privacy__section p {
-      font-size: 15px;
-      color: var(--slate-400);
-      margin-bottom: var(--space-md);
-      line-height: 1.7;
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
     }
     
     .privacy__section ul {
-      margin: var(--space-md) 0;
-      padding-left: var(--space-lg);
+      margin: 20px 0;
+      padding-left: 24px;
     }
     
     .privacy__section li {
       font-size: 15px;
-      color: var(--slate-400);
-      margin-bottom: var(--space-sm);
-      line-height: 1.6;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    
+    .privacy__section li::marker {
+      color: var(--cyan-glow);
     }
     
     .privacy__section li strong {
-      color: var(--slate-300);
+      color: var(--text-primary);
+      font-weight: 500;
     }
     
     .privacy__section a {
-      color: var(--cyan-500);
+      color: var(--cyan-glow);
       text-decoration: underline;
-      text-underline-offset: 2px;
+      text-underline-offset: 3px;
+      transition: color 0.2s;
     }
     
     .privacy__section a:hover {
-      color: var(--cyan-400);
+      color: var(--cyan-soft);
     }
     
     .privacy__highlight {
-      padding: var(--space-lg);
-      background: var(--slate-900);
-      border: 1px solid var(--slate-800);
-      border-radius: var(--radius-lg);
-      margin: var(--space-xl) 0;
+      padding: 28px;
+      background: linear-gradient(135deg, var(--bg-surface) 0%, var(--bg-deep) 100%);
+      border: 1px solid rgba(0, 212, 255, 0.15);
+      border-radius: 16px;
+      margin: 32px 0;
     }
     
     .privacy__highlight h3 {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
-      color: var(--cyan-400);
-      margin-bottom: var(--space-md);
+      color: var(--cyan-glow);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .privacy__highlight h3::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--cyan-glow);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--cyan-glow);
     }
     
     .privacy__highlight ul {
       margin: 0;
-      padding-left: var(--space-lg);
+      padding-left: 24px;
     }
     
     .privacy__highlight li {
       font-size: 14px;
-      color: var(--slate-400);
-      margin-bottom: var(--space-xs);
+      margin-bottom: 8px;
     }
     
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-sm);
-      font-size: 14px;
-      color: var(--slate-500);
-      margin-bottom: var(--space-xl);
-      transition: color 0.2s;
-    }
-    
-    .back-link:hover {
-      color: var(--slate-300);
-    }
-    
-    .back-link svg {
-      width: 16px;
-      height: 16px;
+    .privacy__highlight p {
+      font-size: 15px;
+      margin: 0;
     }
   </style>
 </head>
@@ -131,28 +155,28 @@
     <div class="container">
       <div class="nav__inner">
         <a href="index.html" class="nav__brand">
-          <img src="src/icons/icon32.png" alt="Argus">
+          <img src="src/icons/icon32.png" alt="Argus Shield">
           <span>Argus Shield</span>
         </a>
-        <div class="nav__links">
+        <div class="nav__menu">
           <a href="index.html#features" class="nav__link">Features</a>
-          <a href="index.html#how-it-works" class="nav__link">How It Works</a>
+          <a href="index.html#process" class="nav__link">How It Works</a>
           <a href="index.html#install" class="nav__link">Install</a>
-          <a href="privacy.html" class="nav__link">Privacy</a>
-          <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="nav__cta">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            GitHub
-          </a>
+          <a href="privacy.html" class="nav__link nav__link--active">Privacy</a>
         </div>
+        <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="nav__cta">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
       </div>
     </div>
   </nav>
 
   <!-- Privacy Content -->
-  <section class="privacy">
+  <section class="privacy-page">
     <div class="container">
       <div class="privacy__content">
-        <a href="index.html" class="back-link">
+        <a href="index.html" class="privacy__back">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
@@ -160,7 +184,7 @@
         </a>
         
         <div class="privacy__header">
-          <h1 class="privacy__title text-display">Privacy Policy</h1>
+          <h1 class="privacy__title">Privacy Policy</h1>
           <p class="privacy__updated">Last updated: December 2025</p>
         </div>
 
@@ -168,7 +192,7 @@
           <p>Argus Shield is committed to protecting your privacy. This policy explains how we handle information when you use our browser extension.</p>
           
           <div class="privacy__highlight">
-            <h3>Summary: We don't collect your data</h3>
+            <h3>We don't collect your data</h3>
             <ul>
               <li>No personal data is collected or transmitted</li>
               <li>No wallet addresses are stored remotely</li>
@@ -245,17 +269,17 @@
 
         <div class="privacy__section">
           <h2>Changes to This Policy</h2>
-          <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Significant changes will be noted in the extension's release notes.</p>
+          <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.</p>
         </div>
 
         <div class="privacy__section">
           <h2>Contact</h2>
-          <p>If you have questions about this Privacy Policy, you can open an issue on our <a href="https://github.com/dev-prometheus/argus-shield/issues" target="_blank">GitHub repository</a>.</p>
+          <p>Questions? Open an issue on our <a href="https://github.com/dev-prometheus/argus-shield/issues" target="_blank">GitHub repository</a>.</p>
         </div>
 
-        <div class="privacy__highlight" style="margin-top: var(--space-2xl);">
+        <div class="privacy__highlight" style="margin-top: 48px;">
           <h3>Your privacy is protected</h3>
-          <p style="margin: 0; font-size: 14px; color: var(--slate-400);">Argus Shield was built with a simple principle: your data belongs to you. Everything happens locally on your device.</p>
+          <p>Argus Shield was built with a simple principle: your data belongs to you. Everything happens locally on your device.</p>
         </div>
       </div>
     </div>
