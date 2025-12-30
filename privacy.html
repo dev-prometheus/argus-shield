@@ -5,281 +5,274 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy - Argus Shield</title>
   <link rel="icon" type="image/png" href="src/icons/icon32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
-    :root {
-      --bg-primary: #08080f;
-      --bg-secondary: #0f0f18;
-      --bg-card: #14141f;
-      --text-primary: #ffffff;
-      --text-secondary: #a0a0b0;
-      --text-muted: #606070;
-      --accent: #6366f1;
-      --border: rgba(255,255,255,0.06);
+    .privacy {
+      padding: 140px 0 var(--space-4xl);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    
+    .privacy__header {
+      margin-bottom: var(--space-3xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid var(--slate-800);
     }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
+    
+    .privacy__title {
+      font-size: clamp(32px, 4vw, 48px);
+      color: var(--slate-100);
+      margin-bottom: var(--space-sm);
     }
-
-    nav {
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .logo img {
-      width: 32px;
-      height: 32px;
-    }
-
-    .logo-text {
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--text-primary);
-    }
-
-    .back-link {
-      color: var(--text-secondary);
-      text-decoration: none;
+    
+    .privacy__updated {
       font-size: 14px;
-      display: flex;
+      color: var(--slate-500);
+    }
+    
+    .privacy__content {
+      max-width: 720px;
+    }
+    
+    .privacy__section {
+      margin-bottom: var(--space-2xl);
+    }
+    
+    .privacy__section h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--slate-100);
+      margin-bottom: var(--space-md);
+    }
+    
+    .privacy__section p {
+      font-size: 15px;
+      color: var(--slate-400);
+      margin-bottom: var(--space-md);
+      line-height: 1.7;
+    }
+    
+    .privacy__section ul {
+      margin: var(--space-md) 0;
+      padding-left: var(--space-lg);
+    }
+    
+    .privacy__section li {
+      font-size: 15px;
+      color: var(--slate-400);
+      margin-bottom: var(--space-sm);
+      line-height: 1.6;
+    }
+    
+    .privacy__section li strong {
+      color: var(--slate-300);
+    }
+    
+    .privacy__section a {
+      color: var(--cyan-500);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    
+    .privacy__section a:hover {
+      color: var(--cyan-400);
+    }
+    
+    .privacy__highlight {
+      padding: var(--space-lg);
+      background: var(--slate-900);
+      border: 1px solid var(--slate-800);
+      border-radius: var(--radius-lg);
+      margin: var(--space-xl) 0;
+    }
+    
+    .privacy__highlight h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--cyan-400);
+      margin-bottom: var(--space-md);
+    }
+    
+    .privacy__highlight ul {
+      margin: 0;
+      padding-left: var(--space-lg);
+    }
+    
+    .privacy__highlight li {
+      font-size: 14px;
+      color: var(--slate-400);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .back-link {
+      display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: var(--space-sm);
+      font-size: 14px;
+      color: var(--slate-500);
+      margin-bottom: var(--space-xl);
       transition: color 0.2s;
     }
-
+    
     .back-link:hover {
-      color: var(--text-primary);
+      color: var(--slate-300);
     }
-
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 60px 40px 100px;
-    }
-
-    h1 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .last-updated {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 48px;
-    }
-
-    h2 {
-      font-size: 22px;
-      font-weight: 600;
-      margin-top: 48px;
-      margin-bottom: 16px;
-      color: var(--text-primary);
-    }
-
-    p {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 16px;
-    }
-
-    ul {
-      margin: 16px 0 16px 24px;
-    }
-
-    li {
-      font-size: 15px;
-      color: var(--text-secondary);
-      margin-bottom: 10px;
-    }
-
-    .highlight-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      margin: 24px 0;
-    }
-
-    .highlight-box h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--accent);
-    }
-
-    .highlight-box ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .highlight-box li {
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      padding: 40px;
-      border-top: 1px solid var(--border);
-      text-align: center;
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        padding: 16px 20px;
-      }
-
-      main {
-        padding: 40px 20px 60px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 20px;
-      }
+    
+    .back-link svg {
+      width: 16px;
+      height: 16px;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="logo">
-      <img src="src/icons/icon32.png" alt="Argus Shield">
-      <span class="logo-text">Argus Shield</span>
-    </a>
-    <a href="index.html" class="back-link">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M19 12H5M12 19l-7-7 7-7"/>
-      </svg>
-      Back to Home
-    </a>
+  <!-- Navigation -->
+  <nav class="nav scrolled">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">
+          <img src="src/icons/icon32.png" alt="Argus">
+          <span>Argus Shield</span>
+        </a>
+        <div class="nav__links">
+          <a href="index.html#features" class="nav__link">Features</a>
+          <a href="index.html#how-it-works" class="nav__link">How It Works</a>
+          <a href="index.html#install" class="nav__link">Install</a>
+          <a href="privacy.html" class="nav__link">Privacy</a>
+          <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="nav__cta">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <main>
-    <h1>Privacy Policy</h1>
-    <p class="last-updated">Last updated: December 2024</p>
+  <!-- Privacy Content -->
+  <section class="privacy">
+    <div class="container">
+      <div class="privacy__content">
+        <a href="index.html" class="back-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Back to home
+        </a>
+        
+        <div class="privacy__header">
+          <h1 class="privacy__title text-display">Privacy Policy</h1>
+          <p class="privacy__updated">Last updated: December 2025</p>
+        </div>
 
-    <p>Argus Shield ("we", "our", or "the extension") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our browser extension.</p>
+        <div class="privacy__section">
+          <p>Argus Shield is committed to protecting your privacy. This policy explains how we handle information when you use our browser extension.</p>
+          
+          <div class="privacy__highlight">
+            <h3>Summary: We don't collect your data</h3>
+            <ul>
+              <li>No personal data is collected or transmitted</li>
+              <li>No wallet addresses are stored remotely</li>
+              <li>No browsing history is tracked</li>
+              <li>All data stays on your device</li>
+              <li>No analytics or telemetry</li>
+            </ul>
+          </div>
+        </div>
 
-    <div class="highlight-box">
-      <h3>Summary: We Don't Collect Your Data</h3>
-      <ul>
-        <li>No personal data is collected or transmitted</li>
-        <li>No wallet addresses are stored remotely</li>
-        <li>No browsing history is tracked</li>
-        <li>All data stays on your device</li>
-        <li>No analytics or telemetry</li>
-      </ul>
+        <div class="privacy__section">
+          <h2>Information We Do Not Collect</h2>
+          <p>Argus Shield is designed with privacy as a core principle. We do not collect, store, or transmit:</p>
+          <ul>
+            <li>Your wallet addresses or public keys</li>
+            <li>Your transaction history or balances</li>
+            <li>The websites you visit</li>
+            <li>The signature requests you approve or reject</li>
+            <li>Any personal identifying information</li>
+            <li>Device information or browser fingerprints</li>
+          </ul>
+        </div>
+
+        <div class="privacy__section">
+          <h2>Local Data Storage</h2>
+          <p>Argus Shield stores the following data locally on your device using Chrome's storage API:</p>
+          <ul>
+            <li><strong>Settings</strong> — Your protection preferences (enabled/disabled state)</li>
+            <li><strong>Whitelist</strong> — Contract addresses you've marked as trusted</li>
+            <li><strong>Blacklist</strong> — Addresses you've marked as malicious</li>
+            <li><strong>Activity Log</strong> — Recent threat detections for your reference</li>
+          </ul>
+          <p>This data never leaves your device and is not accessible to us or any third party. You can clear it anytime through the extension or by uninstalling.</p>
+        </div>
+
+        <div class="privacy__section">
+          <h2>How the Extension Works</h2>
+          <p>When you interact with Web3 applications, Argus Shield:</p>
+          <ul>
+            <li>Intercepts signature and transaction requests in your browser</li>
+            <li>Analyzes the request locally to detect known attack patterns</li>
+            <li>Displays warnings based on the analysis</li>
+            <li>Allows you to approve or reject the request</li>
+          </ul>
+          <p>All analysis is performed locally in your browser. No data is sent to external servers.</p>
+        </div>
+
+        <div class="privacy__section">
+          <h2>Network Requests</h2>
+          <p>The extension does not make any network requests. It does not:</p>
+          <ul>
+            <li>Connect to external servers</li>
+            <li>Download blacklists from remote sources</li>
+            <li>Send telemetry or usage statistics</li>
+            <li>Check for updates automatically</li>
+          </ul>
+        </div>
+
+        <div class="privacy__section">
+          <h2>Permissions</h2>
+          <p>Argus Shield requires the following browser permissions:</p>
+          <ul>
+            <li><strong>storage</strong> — To save your settings, whitelist, and blacklist locally</li>
+            <li><strong>activeTab</strong> — To detect when you're on a page that may make wallet requests</li>
+            <li><strong>host_permissions (all_urls)</strong> — To inject the protection script on Web3 sites</li>
+          </ul>
+          <p>These are the minimum permissions required. We do not use them to collect or transmit any data.</p>
+        </div>
+
+        <div class="privacy__section">
+          <h2>Open Source</h2>
+          <p>Argus Shield is open source software. You can review the complete source code on our <a href="https://github.com/dev-prometheus/argus-shield" target="_blank">GitHub repository</a> to verify our privacy practices.</p>
+        </div>
+
+        <div class="privacy__section">
+          <h2>Changes to This Policy</h2>
+          <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Significant changes will be noted in the extension's release notes.</p>
+        </div>
+
+        <div class="privacy__section">
+          <h2>Contact</h2>
+          <p>If you have questions about this Privacy Policy, you can open an issue on our <a href="https://github.com/dev-prometheus/argus-shield/issues" target="_blank">GitHub repository</a>.</p>
+        </div>
+
+        <div class="privacy__highlight" style="margin-top: var(--space-2xl);">
+          <h3>Your privacy is protected</h3>
+          <p style="margin: 0; font-size: 14px; color: var(--slate-400);">Argus Shield was built with a simple principle: your data belongs to you. Everything happens locally on your device.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <h2>Information We Do Not Collect</h2>
-    <p>Argus Shield is designed with privacy as a core principle. We do not collect, store, or transmit:</p>
-    <ul>
-      <li>Your wallet addresses or public keys</li>
-      <li>Your transaction history or balances</li>
-      <li>The websites you visit</li>
-      <li>The signature requests you approve or reject</li>
-      <li>Any personal identifying information</li>
-      <li>Device information or browser fingerprints</li>
-    </ul>
-
-    <h2>Local Data Storage</h2>
-    <p>Argus Shield stores the following data locally on your device using Chrome's storage API:</p>
-    <ul>
-      <li><strong>Settings:</strong> Your protection preferences (enabled/disabled state)</li>
-      <li><strong>Whitelist:</strong> Contract addresses you've marked as trusted</li>
-      <li><strong>Blacklist:</strong> Addresses you've marked as malicious</li>
-      <li><strong>Activity Log:</strong> Recent threat detections for your reference (stored locally only)</li>
-    </ul>
-    <p>This data never leaves your device and is not accessible to us or any third party. You can clear this data at any time through the extension's popup interface or by uninstalling the extension.</p>
-
-    <h2>How the Extension Works</h2>
-    <p>When you interact with Web3 applications, Argus Shield:</p>
-    <ul>
-      <li>Intercepts signature and transaction requests in your browser</li>
-      <li>Analyzes the request locally to detect known attack patterns</li>
-      <li>Displays warnings based on the analysis</li>
-      <li>Allows you to approve or reject the request</li>
-    </ul>
-    <p>All analysis is performed locally in your browser. No data is sent to external servers.</p>
-
-    <h2>Third-Party Services</h2>
-    <p>Argus Shield does not integrate with or send data to any third-party services, APIs, or analytics platforms. The extension operates entirely offline after installation.</p>
-
-    <h2>Network Requests</h2>
-    <p>The extension does not make any network requests. It does not:</p>
-    <ul>
-      <li>Connect to external servers</li>
-      <li>Download blacklists or threat data from remote sources</li>
-      <li>Send telemetry or usage statistics</li>
-      <li>Check for updates automatically (updates are handled through your browser's extension management)</li>
-    </ul>
-
-    <h2>Permissions</h2>
-    <p>Argus Shield requires the following browser permissions:</p>
-    <ul>
-      <li><strong>storage:</strong> To save your settings, whitelist, and blacklist locally</li>
-      <li><strong>activeTab:</strong> To detect when you're on a page that may make wallet requests</li>
-      <li><strong>host_permissions (all_urls):</strong> To inject the protection script on Web3 sites</li>
-    </ul>
-    <p>These permissions are the minimum required for the extension to function. We do not use them to collect or transmit any data.</p>
-
-    <h2>Open Source</h2>
-    <p>Argus Shield is open source software. You can review the complete source code on our <a href="https://github.com/dev-prometheus/argus-shield" target="_blank">GitHub repository</a> to verify our privacy practices.</p>
-
-    <h2>Children's Privacy</h2>
-    <p>Argus Shield does not knowingly collect any information from anyone, including children under the age of 13. The extension does not collect personal information from any users.</p>
-
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated revision date. Significant changes will be noted in the extension's release notes on GitHub.</p>
-
-    <h2>Contact</h2>
-    <p>If you have questions about this Privacy Policy or the extension's privacy practices, you can:</p>
-    <ul>
-      <li>Open an issue on our <a href="https://github.com/dev-prometheus/argus-shield/issues" target="_blank">GitHub repository</a></li>
-      <li>Review the source code to verify our practices</li>
-    </ul>
-
-    <div class="highlight-box">
-      <h3>Your Privacy is Protected</h3>
-      <p style="margin-bottom: 0; color: var(--text-secondary);">Argus Shield was built with a simple principle: your data belongs to you. We've designed the extension to provide maximum security without compromising your privacy. Everything happens locally on your device.</p>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__links">
+          <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="footer__link">GitHub</a>
+          <a href="privacy.html" class="footer__link">Privacy Policy</a>
+          <a href="https://github.com/dev-prometheus/argus-shield/issues" target="_blank" class="footer__link">Report Issue</a>
+        </div>
+        <div class="footer__copy">© 2025 Argus Shield. Open source under MIT License.</div>
+      </div>
     </div>
-  </main>
-
-  <footer>
-    &copy; 2024 Argus Shield. Open source under MIT License.
   </footer>
 </body>
 </html>
