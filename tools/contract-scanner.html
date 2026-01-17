@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Scanner - Argus Shield</title>
+  <meta name="description" content="Analyze any Ethereum smart contract. Check verification status, age, risk score, and known malicious patterns.">
+  <link rel="icon" type="image/png" href="../src/icons/icon32.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/arsenal.css">
+  <link rel="stylesheet" href="../css/scanner.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav__brand">
+          <img src="../src/icons/icon32.png" alt="Argus Shield">
+          <span>Argus Shield</span>
+        </a>
+        <div class="nav__menu">
+          <a href="../index.html#features" class="nav__link">Features</a>
+          <div class="nav__dropdown">
+            <a href="../arsenal.html" class="nav__link nav__link--active">Arsenal</a>
+            <div class="nav__dropdown-menu">
+              <a href="contract-scanner.html" class="nav__dropdown-item nav__dropdown-item--current">
+                <span class="nav__dropdown-icon">🔍</span>
+                Contract Scanner
+              </a>
+              <a href="#" class="nav__dropdown-item nav__dropdown-item--disabled">
+                <span class="nav__dropdown-icon">📝</span>
+                Signature Analyzer
+                <span class="nav__dropdown-badge">Soon</span>
+              </a>
+              <a href="#" class="nav__dropdown-item nav__dropdown-item--disabled">
+                <span class="nav__dropdown-icon">✓</span>
+                Approval Checker
+                <span class="nav__dropdown-badge">Soon</span>
+              </a>
+            </div>
+          </div>
+          <a href="../index.html#process" class="nav__link">How It Works</a>
+          <a href="../index.html#install" class="nav__link">Install</a>
+          <a href="../privacy.html" class="nav__link">Privacy</a>
+        </div>
+        <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="nav__cta">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Scanner Header -->
+  <section class="scanner-header">
+    <div class="container">
+      <a href="../arsenal.html" class="scanner-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Arsenal
+      </a>
+      
+      <div class="scanner-header__content">
+        <div class="scanner-header__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+            <path d="M11 8v6M8 11h6"/>
+          </svg>
+        </div>
+        <div class="scanner-header__text">
+          <h1>Contract Scanner</h1>
+          <p>Look up any contract on Ethereum Mainnet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scanner Input -->
+  <section class="scanner-input-section">
+    <div class="container">
+      <div class="scanner-input-card">
+        <form id="scannerForm" class="scanner-form">
+          <div class="scanner-input-wrapper">
+            <div class="scanner-input-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M7 7h.01M7 12h.01M7 17h.01M12 7h5M12 12h5M12 17h5"/>
+              </svg>
+            </div>
+            <input 
+              type="text" 
+              id="contractAddress" 
+              class="scanner-input" 
+              placeholder="Enter contract address (0x...)"
+              pattern="^0x[a-fA-F0-9]{40}$"
+              required
+            >
+            <button type="submit" class="scanner-submit" id="scanButton">
+              <span class="scanner-submit__text">Analyze</span>
+              <span class="scanner-submit__loading">
+                <svg class="spinner" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="60" stroke-dashoffset="20"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div class="scanner-input-hint">
+            <span class="scanner-network">
+              <span class="scanner-network__dot"></span>
+              Ethereum Mainnet
+            </span>
+            <span class="scanner-example">
+              Try: <button type="button" class="scanner-example__btn" data-address="0xdAC17F958D2ee523a2206206994597C13D831ec7">USDT</button>
+              <button type="button" class="scanner-example__btn" data-address="0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48">USDC</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="scanner-results" id="resultsSection" style="display: none;">
+    <div class="container">
+      
+      <!-- Risk Score Card -->
+      <div class="result-card result-card--score" id="scoreCard">
+        <div class="score-display">
+          <div class="score-circle" id="scoreCircle">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="8"/>
+              <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8" 
+                      stroke-dasharray="283" stroke-dashoffset="283" stroke-linecap="round"
+                      class="score-circle__progress" id="scoreProgress"/>
+            </svg>
+            <div class="score-value">
+              <span class="score-number" id="scoreNumber">--</span>
+              <span class="score-max">/100</span>
+            </div>
+          </div>
+          <div class="score-info">
+            <div class="score-label" id="scoreLabel">Analyzing...</div>
+            <div class="score-address" id="scoreAddress">0x...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Details Grid -->
+      <div class="result-grid">
+        
+        <!-- Contract Info -->
+        <div class="result-card">
+          <div class="result-card__header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+            </svg>
+            <h3>Contract Info</h3>
+          </div>
+          <div class="result-card__body">
+            <div class="result-row">
+              <span class="result-label">Name</span>
+              <span class="result-value" id="contractName">--</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Type</span>
+              <span class="result-value" id="contractType">--</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Compiler</span>
+              <span class="result-value" id="compilerVersion">--</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Verification Status -->
+        <div class="result-card">
+          <div class="result-card__header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <h3>Verification</h3>
+          </div>
+          <div class="result-card__body">
+            <div class="result-row">
+              <span class="result-label">Source Code</span>
+              <span class="result-value result-badge" id="verifiedStatus">--</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Proxy</span>
+              <span class="result-value" id="isProxy">--</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">License</span>
+              <span class="result-value" id="license">--</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="result-card">
+          <div class="result-card__header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12,6 12,12 16,14"/>
+            </svg>
+            <h3>Timeline</h3>
+          </div>
+          <div class="result-card__body">
+            <div class="result-row">
+              <span class="result-label">Created</span>
+              <span class="result-value" id="createdDate">--</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Age</span>
+              <span class="result-value result-badge" id="contractAge">--</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Deployer</span>
+              <span class="result-value result-value--mono" id="deployerAddress">--</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity -->
+        <div class="result-card">
+          <div class="result-card__header">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22,12 18,12 15,21 9,3 6,12 2,12"/>
+            </svg>
+            <h3>Activity</h3>
+          </div>
+          <div class="result-card__body">
+            <div class="result-row">
+              <span class="result-label">Transactions</span>
+              <span class="result-value" id="txCount">--</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Balance</span>
+              <span class="result-value" id="balance">--</span>
+            </div>
+            <div class="result-row">
+              <span class="result-label">Last Activity</span>
+              <span class="result-value" id="lastActivity">--</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Warnings -->
+      <div class="result-card result-card--warnings" id="warningsCard" style="display: none;">
+        <div class="result-card__header result-card__header--warning">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+            <line x1="12" y1="9" x2="12" y2="13"/>
+            <line x1="12" y1="17" x2="12.01" y2="17"/>
+          </svg>
+          <h3>Warnings</h3>
+        </div>
+        <ul class="warnings-list" id="warningsList">
+        </ul>
+      </div>
+
+      <!-- Actions -->
+      <div class="result-actions">
+        <a href="#" class="result-action" id="etherscanLink" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+            <polyline points="15,3 21,3 21,9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+          View on Etherscan
+        </a>
+        <button class="result-action" id="copyReport">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2"/>
+            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+          </svg>
+          Copy Report
+        </button>
+        <button class="result-action" id="scanAnother">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23,4 23,10 17,10"/>
+            <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
+          </svg>
+          Scan Another
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Empty State / How It Works -->
+  <section class="scanner-info" id="infoSection">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card__num">1</div>
+          <h4>Paste Address</h4>
+          <p>Drop any Ethereum contract address in the box above</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card__num">2</div>
+          <h4>We Check It</h4>
+          <p>Verified? How old? Who deployed it? Any red flags in our database?</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card__num">3</div>
+          <h4>Get Results</h4>
+          <p>Simple score from 0-100, plus details on what we found</p>
+        </div>
+      </div>
+      
+      <div class="info-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="16" x2="12" y2="12"/>
+          <line x1="12" y1="8" x2="12.01" y2="8"/>
+        </svg>
+        <p>
+          <strong>Heads up:</strong> This shows public data and known patterns. 
+          Low score doesn't mean safe. Always do your own research before sending anything to a contract.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__links">
+          <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="footer__link">GitHub</a>
+          <a href="../privacy.html" class="footer__link">Privacy Policy</a>
+          <a href="https://github.com/dev-prometheus/argus-shield/issues" target="_blank" class="footer__link">Report Issue</a>
+        </div>
+        <div class="footer__copy">© 2025 Argus Shield. Open source under MIT License.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/scanner.js"></script>
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

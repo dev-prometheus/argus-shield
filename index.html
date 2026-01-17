@@ -6,7 +6,8 @@
   <title>Argus Shield - Web3 Wallet Security</title>
   <meta name="description" content="Real-time protection against cryptocurrency wallet drainer attacks. Open-source browser extension.">
   <link rel="icon" type="image/png" href="src/icons/icon32.png">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/arsenal.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -19,6 +20,25 @@
         </a>
         <div class="nav__menu">
           <a href="#features" class="nav__link">Features</a>
+          <div class="nav__dropdown">
+            <a href="arsenal.html" class="nav__link">Arsenal</a>
+            <div class="nav__dropdown-menu">
+              <a href="tools/contract-scanner.html" class="nav__dropdown-item">
+                <span class="nav__dropdown-icon">🔍</span>
+                Contract Scanner
+              </a>
+              <a href="#" class="nav__dropdown-item nav__dropdown-item--disabled">
+                <span class="nav__dropdown-icon">📝</span>
+                Signature Analyzer
+                <span class="nav__dropdown-badge">Soon</span>
+              </a>
+              <a href="#" class="nav__dropdown-item nav__dropdown-item--disabled">
+                <span class="nav__dropdown-icon">✓</span>
+                Approval Checker
+                <span class="nav__dropdown-badge">Soon</span>
+              </a>
+            </div>
+          </div>
           <a href="#process" class="nav__link">How It Works</a>
           <a href="#install" class="nav__link">Install</a>
           <a href="privacy.html" class="nav__link">Privacy</a>
@@ -52,7 +72,7 @@
             <span>before they strike</span>
           </h1>
           <p class="hero__desc">
-            Argus intercepts malicious signature requests in real-time, analyzing Permit2, EIP-2612, and approval patterns before they reach your wallet.
+            Argus catches dangerous signature requests before your wallet ever sees them. It knows what Permit2 exploits, fake permits, and shady approvals look like.
           </p>
           <div class="hero__actions">
             <a href="https://github.com/dev-prometheus/argus-shield/releases" class="btn btn--primary">
@@ -109,7 +129,7 @@
       <div class="features__header">
         <div class="section__label">Protection</div>
         <h2 class="section__title">What Argus detects</h2>
-        <p class="section__desc">Real-time signature analysis to identify attack patterns used by modern wallet drainers.</p>
+        <p class="section__desc">We watch for the same tricks drainers use to steal wallets. Here's what we catch.</p>
       </div>
       
       <div class="bento">
@@ -121,7 +141,7 @@
             </svg>
           </div>
           <h3 class="bento__title">Permit2 Signatures</h3>
-          <p class="bento__desc">Catches PermitBatchTransferFrom and PermitTransferFrom — the signatures that let attackers drain multiple tokens with a single click. The most common attack vector in 2024-2025.</p>
+          <p class="bento__desc">The signature that drains entire wallets in one click. Permit2 lets attackers take multiple tokens at once. This is how most people lose everything in 2024-2025.</p>
         </div>
         
         <div class="bento__item bento__item--2">
@@ -132,7 +152,7 @@
             </svg>
           </div>
           <h3 class="bento__title">EIP-2612 Permits</h3>
-          <p class="bento__desc">Native token permits that work on fresh wallets with no prior approvals.</p>
+          <p class="bento__desc">These permits don't need prior approvals. Fresh wallet? Doesn't matter. One signature and your tokens are gone.</p>
         </div>
         
         <div class="bento__item bento__item--3">
@@ -142,7 +162,7 @@
             </svg>
           </div>
           <h3 class="bento__title">Approval Analysis</h3>
-          <p class="bento__desc">Warns when approving to Permit2 or unknown contracts.</p>
+          <p class="bento__desc">Flags risky approvals before you sign. Unknown contract? We'll let you know.</p>
         </div>
         
         <div class="bento__item bento__item--4">
@@ -152,7 +172,7 @@
             </svg>
           </div>
           <h3 class="bento__title">Blind Sign Block</h3>
-          <p class="bento__desc">Blocks eth_sign requests that hide data.</p>
+          <p class="bento__desc">eth_sign hides what you're signing. We block it completely.</p>
         </div>
         
         <div class="bento__item bento__item--5">
@@ -162,7 +182,7 @@
             </svg>
           </div>
           <h3 class="bento__title">Whitelist System</h3>
-          <p class="bento__desc">Pre-configured trusted DeFi protocols.</p>
+          <p class="bento__desc">Uniswap, OpenSea, and other legit protocols won't trigger warnings.</p>
         </div>
         
         <div class="bento__item bento__item--6">
@@ -173,8 +193,35 @@
             </svg>
           </div>
           <h3 class="bento__title">Activity Log</h3>
-          <p class="bento__desc">Track every intercepted threat.</p>
+          <p class="bento__desc">See everything Argus has blocked or flagged.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Arsenal CTA -->
+  <section class="arsenal-cta">
+    <div class="container">
+      <div class="arsenal-cta__card">
+        <div class="arsenal-cta__content">
+          <div class="arsenal-cta__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+              <path d="M11 8v6M8 11h6"/>
+            </svg>
+          </div>
+          <div class="arsenal-cta__text">
+            <h3>Check any contract before you interact</h3>
+            <p>Free tools to verify contracts. See how old they are, if they're verified, and if anything looks off.</p>
+          </div>
+        </div>
+        <a href="arsenal.html" class="arsenal-cta__btn">
+          Explore Arsenal
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -185,29 +232,29 @@
       <div class="process__header">
         <div class="section__label">Process</div>
         <h2 class="section__title">How it works</h2>
-        <p class="section__desc">Seamless protection running in the background without affecting your Web3 experience.</p>
+        <p class="section__desc">Runs quietly in the background. You won't notice it until something sketchy shows up.</p>
       </div>
       
       <div class="process__flow">
         <div class="process__step">
           <div class="process__num">1</div>
           <h3 class="process__title">Intercept</h3>
-          <p class="process__desc">Hooks into your wallet and catches all signature requests before execution.</p>
+          <p class="process__desc">Sits between you and your wallet. Every signature request goes through Argus first.</p>
         </div>
         <div class="process__step">
           <div class="process__num">2</div>
           <h3 class="process__title">Analyze</h3>
-          <p class="process__desc">Parses the request to detect Permit2, native permits, and dangerous patterns.</p>
+          <p class="process__desc">Breaks down the request. Looks for Permit2, native permits, and known attack patterns.</p>
         </div>
         <div class="process__step">
           <div class="process__num">3</div>
           <h3 class="process__title">Assess</h3>
-          <p class="process__desc">Classifies risk as Critical, High, or Medium based on potential impact.</p>
+          <p class="process__desc">Scores the risk. Critical, High, or Medium based on what could happen if you sign.</p>
         </div>
         <div class="process__step">
           <div class="process__num">4</div>
           <h3 class="process__title">Decide</h3>
-          <p class="process__desc">Shows you threat details. You choose to block or proceed.</p>
+          <p class="process__desc">Shows you what's wrong. You decide whether to block it or let it through.</p>
         </div>
       </div>
     </div>
@@ -219,8 +266,8 @@
       <div class="install__grid">
         <div class="install__content">
           <div class="section__label">Setup</div>
-          <h2 class="section__title">Get protected in 2 minutes</h2>
-          <p class="section__desc">No account required. Works with Chrome, Brave, Edge, and any Chromium browser.</p>
+          <h2 class="section__title">Set up in 2 minutes</h2>
+          <p class="section__desc">No account needed. Works on Chrome, Brave, Edge, or any Chromium browser.</p>
           
           <div class="notice">
             <div class="notice__title">
@@ -229,7 +276,7 @@
               </svg>
               Beta Release
             </div>
-            <p class="notice__text">This is a beta for testing. While Argus adds protection, always verify transactions carefully. Report issues on GitHub.</p>
+            <p class="notice__text">Still in beta. Argus adds a layer of protection, but always double-check what you're signing. Found a bug? Let us know on GitHub.</p>
           </div>
         </div>
         
@@ -287,6 +334,7 @@
       <div class="footer__inner">
         <div class="footer__links">
           <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="footer__link">GitHub</a>
+          <a href="arsenal.html" class="footer__link">Arsenal</a>
           <a href="privacy.html" class="footer__link">Privacy Policy</a>
           <a href="https://github.com/dev-prometheus/argus-shield/issues" target="_blank" class="footer__link">Report Issue</a>
         </div>

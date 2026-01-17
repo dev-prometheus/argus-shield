@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arsenal - Argus Shield Security Tools</title>
+  <meta name="description" content="Web3 security tools to analyze contracts, decode signatures, and protect your assets. Free and open-source.">
+  <link rel="icon" type="image/png" href="src/icons/icon32.png">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/arsenal.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__brand">
+          <img src="src/icons/icon32.png" alt="Argus Shield">
+          <span>Argus Shield</span>
+        </a>
+        <div class="nav__menu">
+          <a href="index.html#features" class="nav__link">Features</a>
+          <div class="nav__dropdown">
+            <a href="arsenal.html" class="nav__link nav__link--active">Arsenal</a>
+            <div class="nav__dropdown-menu">
+              <a href="tools/contract-scanner.html" class="nav__dropdown-item">
+                <span class="nav__dropdown-icon">🔍</span>
+                Contract Scanner
+              </a>
+              <a href="#" class="nav__dropdown-item nav__dropdown-item--disabled">
+                <span class="nav__dropdown-icon">📝</span>
+                Signature Analyzer
+                <span class="nav__dropdown-badge">Soon</span>
+              </a>
+              <a href="#" class="nav__dropdown-item nav__dropdown-item--disabled">
+                <span class="nav__dropdown-icon">✓</span>
+                Approval Checker
+                <span class="nav__dropdown-badge">Soon</span>
+              </a>
+            </div>
+          </div>
+          <a href="index.html#process" class="nav__link">How It Works</a>
+          <a href="index.html#install" class="nav__link">Install</a>
+          <a href="privacy.html" class="nav__link">Privacy</a>
+        </div>
+        <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="nav__cta">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="arsenal-hero">
+    <div class="arsenal-hero__bg">
+      <div class="arsenal-hero__gradient"></div>
+      <div class="arsenal-hero__grid"></div>
+    </div>
+    
+    <div class="container">
+      <div class="arsenal-hero__content">
+        <div class="arsenal-hero__label">
+          <span class="arsenal-hero__label-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </span>
+          Security Toolkit
+        </div>
+        <h1 class="arsenal-hero__title">The Arsenal</h1>
+        <p class="arsenal-hero__desc">
+          Tools to check contracts, decode signatures, and stay ahead of scams. 
+          Built for security researchers and regular users.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Grid -->
+  <section class="tools-section">
+    <div class="container">
+      <div class="tools-grid">
+        
+        <!-- Contract Scanner - Active -->
+        <a href="tools/contract-scanner.html" class="tool-card tool-card--active">
+          <div class="tool-card__status">
+            <span class="tool-card__status-dot"></span>
+            Live
+          </div>
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+              <path d="M11 8v6M8 11h6"/>
+            </svg>
+          </div>
+          <h3 class="tool-card__title">Contract Scanner</h3>
+          <p class="tool-card__desc">
+            Look up any Ethereum contract. See how old it is, whether it's verified, and if we've flagged it before.
+          </p>
+          <div class="tool-card__tags">
+            <span class="tool-card__tag">Ethereum</span>
+            <span class="tool-card__tag">Risk Analysis</span>
+          </div>
+          <div class="tool-card__action">
+            Launch Tool
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Signature Analyzer - Coming Soon -->
+        <div class="tool-card tool-card--soon">
+          <div class="tool-card__status tool-card__status--soon">
+            Coming Soon
+          </div>
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10,9 9,9 8,9"/>
+            </svg>
+          </div>
+          <h3 class="tool-card__title">Signature Analyzer</h3>
+          <p class="tool-card__desc">
+            Paste a signature request and see exactly what it does. No more guessing what you're about to sign.
+          </p>
+          <div class="tool-card__tags">
+            <span class="tool-card__tag">EIP-712</span>
+            <span class="tool-card__tag">Permit2</span>
+          </div>
+          <div class="tool-card__action tool-card__action--disabled">
+            In Development
+          </div>
+        </div>
+
+        <!-- Approval Checker - Coming Soon -->
+        <div class="tool-card tool-card--soon">
+          <div class="tool-card__status tool-card__status--soon">
+            Coming Soon
+          </div>
+          <div class="tool-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3 class="tool-card__title">Approval Checker</h3>
+          <p class="tool-card__desc">
+            See every approval you've ever given. Revoke the ones you don't need anymore.
+          </p>
+          <div class="tool-card__tags">
+            <span class="tool-card__tag">ERC-20</span>
+            <span class="tool-card__tag">NFTs</span>
+          </div>
+          <div class="tool-card__action tool-card__action--disabled">
+            In Development
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Report Section -->
+  <section class="report-section">
+    <div class="container">
+      <div class="report-card">
+        <div class="report-card__content">
+          <div class="report-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <line x1="12" y1="17" x2="12.01" y2="17"/>
+            </svg>
+          </div>
+          <div class="report-card__text">
+            <h3>Got scammed or saw something suspicious?</h3>
+            <p>Report it. We'll look into it and add confirmed threats to our blocklist.</p>
+          </div>
+        </div>
+        <button class="report-card__btn" id="openReportModal">
+          Report Address
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Network Support -->
+  <section class="networks-section">
+    <div class="container">
+      <div class="networks-header">
+        <h2 class="networks-title">Network Support</h2>
+        <p class="networks-desc">Ethereum Mainnet for now. More chains on the way.</p>
+      </div>
+      <div class="networks-grid">
+        <div class="network-item network-item--active">
+          <div class="network-item__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.944 17.97L4.58 13.62 11.943 24l7.37-10.38-7.372 4.35h.003zM12.056 0L4.69 12.223l7.365 4.354 7.365-4.35L12.056 0z"/>
+            </svg>
+          </div>
+          <span class="network-item__name">Ethereum</span>
+          <span class="network-item__status">Live</span>
+        </div>
+        <div class="network-item network-item--soon">
+          <div class="network-item__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0L1.5 6v12L12 24l10.5-6V6L12 0zm0 2.18l8.25 4.72v9.46L12 21.08l-8.25-4.72V6.9L12 2.18z"/>
+            </svg>
+          </div>
+          <span class="network-item__name">Polygon</span>
+          <span class="network-item__status">Soon</span>
+        </div>
+        <div class="network-item network-item--soon">
+          <div class="network-item__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+          </div>
+          <span class="network-item__name">Arbitrum</span>
+          <span class="network-item__status">Soon</span>
+        </div>
+        <div class="network-item network-item--soon">
+          <div class="network-item__icon">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+          </div>
+          <span class="network-item__name">Base</span>
+          <span class="network-item__status">Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__links">
+          <a href="https://github.com/dev-prometheus/argus-shield" target="_blank" class="footer__link">GitHub</a>
+          <a href="privacy.html" class="footer__link">Privacy Policy</a>
+          <a href="https://github.com/dev-prometheus/argus-shield/issues" target="_blank" class="footer__link">Report Issue</a>
+        </div>
+        <div class="footer__copy">© 2025 Argus Shield. Open source under MIT License.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Report Modal -->
+  <div class="modal" id="reportModal">
+    <div class="modal__backdrop"></div>
+    <div class="modal__container">
+      <div class="modal__header">
+        <h3 class="modal__title">Report Suspicious Address</h3>
+        <button class="modal__close" id="closeReportModal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      <form class="modal__body" id="reportForm">
+        <p class="modal__desc">
+          Found a drainer site or got hit by a scam? Drop the address here. We review every report.
+        </p>
+        
+        <div class="form-group">
+          <label class="form-label" for="reportAddress">Contract or Wallet Address <span class="required">*</span></label>
+          <input 
+            type="text" 
+            class="form-input" 
+            id="reportAddress" 
+            placeholder="0x..." 
+            required
+            pattern="^0x[a-fA-F0-9]{40}$"
+          >
+          <span class="form-hint">Enter a valid Ethereum address (0x...)</span>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="reportDescription">What happened?</label>
+          <textarea 
+            class="form-textarea" 
+            id="reportDescription" 
+            placeholder="Describe the scam or suspicious behavior..."
+            rows="3"
+          ></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="reportEmail">Your email <span class="optional">(optional)</span></label>
+          <input 
+            type="email" 
+            class="form-input" 
+            id="reportEmail" 
+            placeholder="For follow-up if needed"
+          >
+        </div>
+        
+        <div class="modal__footer">
+          <button type="button" class="btn btn--secondary" id="cancelReport">Cancel</button>
+          <button type="submit" class="btn btn--primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+            Submit Report
+          </button>
+        </div>
+      </form>
+      
+      <!-- Success State -->
+      <div class="modal__success" id="reportSuccess" style="display: none;">
+        <div class="modal__success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+            <polyline points="22,4 12,14.01 9,11.01"/>
+          </svg>
+        </div>
+        <h4>Got it</h4>
+        <p>Thanks for the heads up. We'll check it out.</p>
+        <button class="btn btn--secondary" id="closeSuccessModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/report.js"></script>
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
